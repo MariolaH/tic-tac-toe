@@ -78,6 +78,41 @@ State (things that change)
         Else
         currentPlayer = ‘X’
 
+* makeMove()
+    Adds the current player to the tile clicked
+    checkWin()
+    If win do endGame()
+    else
+    Switches the currentPlayer in state
+    Removes the eventListener
+
+
+when click on board switched between players
+when no more combinations game over
+
+when player gets 3 in row game over
+* if winner === winnerConditions
+    then player? wins
+    else draw
+
+
+
+
+*endGame()
+    Display the winner of the game
+    Remove all event listeners
+    Show reset game button
+
+
+reset
+
+*resetGame()
+    Drawboard
+    Resets state to initial values
+
+
+
+
 
 ```
 
