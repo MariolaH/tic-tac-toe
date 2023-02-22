@@ -55,8 +55,16 @@ State (things that change)
 ```
 * init ()
 
-*  modal pop up - input players names
-    pops up when rest button is clicked
+* createBoard
+
+* createPlayers
+
+
+
+*  modal pop up - input players names??
+
+    pops up when rest button is clicked??
+
 
     resetClicked
         if resetClicked === clicked
@@ -66,13 +74,39 @@ State (things that change)
 
 * indication of whos turn its
 
-    switchPlayers()
-        if currentPlayerX = click
-            then currentPlayerO = click
+when player clicks on board switches to next players name
 
-            OR
 
-*   switchPlayer()
+
+  
+
+
+when click on board switched between players
+when no more combinations endGame ()
+
+
+
+
+
+game starts by modal popping to register players names
+
+input names begin game
+eventlistener to registers player
+    registerPlayers 
+        if input names complete
+        then start game
+    
+    
+
+game is already reset - no need to do anything but start playing
+
+scoreboard inticates who starts
+connected to switch players
+
+player 1 clicks on board (symbol)
+
+
+        *   switchPlayer()
      If currentPlayer == ‘X’
         currentPlayer = ‘O’
         Else
@@ -80,41 +114,82 @@ State (things that change)
 
 * makeMove()
     Adds the current player to the tile clicked
-    checkWin()
-    If win do endGame()
-    else
-    Switches the currentPlayer in state
-    Removes the eventListener
 
 
-when click on board switched between players
-when no more combinations game over
+        checkWin()
+        If win do endGame()
+        else
+        Switches the currentPlayer in state
+        Removes the eventListener
 
-when player gets 3 in row game over
-* if winner === winnerConditions
-    then player? wins
-    else draw
-
-
+scoreboard switches to player 2
 
 
-*endGame()
-    Display the winner of the game
-    Remove all event listeners
-    Show reset game button
+player 2 clicks on board
+
+        *   switchPlayer()
+     If currentPlayer == ‘X’
+        currentPlayer = ‘O’
+        Else
+        currentPlayer = ‘X’
+
+* makeMove()
+    Adds the current player to the tile clicked
 
 
-reset
+        checkWin()
+        If win do endGame()
+        else
+        Switches the currentPlayer in state
+        Removes the eventListener
 
-*resetGame()
-    Drawboard
-    Resets state to initial values
-
-
-
-
-
-```
+cannot click on same tile twice (need to disable that clickevent listener on that tile once it is clicked)
 
 
+players go back and forth till
 
+    3 in a row
+        or
+    no more combinations (draw)
+
+        when player gets 3 in row endGame ()
+    *       if winner === winnerConditions
+            then player? wins
+            else draw (no winner)
+
+modal pop up indicating who has won or draw or alert
+
+    *endGame()
+        Display the winner of the game
+        Remove all event listeners
+        Show reset game button
+
+
+close modal
+
+hit reset button
+
+    
+    resetGame()
+        Drawboard
+        Resets state to initial values
+
+
+game restarts
+
+
+
+
+
+
+
+
+each seperate tile has its own div class="tile 0" etc
+
+create switch statement with all the conditions in it
+
+case 0 (is tile 1
+    run winCondition if 3 in a row [case 0,1,2]=win
+    disable that tile till reset game
+    
+)
