@@ -129,6 +129,7 @@ player 2 clicks on board
 
         *   switchPlayer()
      If currentPlayer == ‘X’
+    
         currentPlayer = ‘O’
         Else
         currentPlayer = ‘X’
