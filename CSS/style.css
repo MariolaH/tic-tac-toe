@@ -47,7 +47,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 100 px;
+    font-size: 70px;
     height: 100%;
     width: 100%;
     border: 15px solid palevioletred;
@@ -65,7 +65,6 @@ body {
     font-family: monospace;
     color: rgb(205, 59, 107);
 }
-
 
 .turn {
     text-align: left;
