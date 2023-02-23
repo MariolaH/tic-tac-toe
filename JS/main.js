@@ -14,12 +14,12 @@ createBoardGameElement.classList.add('createBoardGameElement');
 app.appendChild(createBoardGameElement);
 
 
-// create squares append tiles to createBoardGameElement
+// create squares 
 
 
 let createTileElement = document.createElement ('div')
 createTileElement.classList.add('createTileElement');
-createBoardGameElement.appendChild(createTileElement);
+// createBoardGameElement.appendChild(createTileElement);
 
 let currentPlayer = "X";
 
@@ -49,20 +49,7 @@ function buildBoard() {
 
 buildBoard();
 
-reset 
-
-
-// function buildBoard() {
-//     for(let i = 0; i < 9; i++) {
-//         let tile = document.createElement("button");
-//         app.appendChild(tile);
-//         tile.className = "tile";
-//         tile.onclick = clickTile; 
-//     }
-// }
-
-// buildBoard();
-
+// reset 
 
 
 

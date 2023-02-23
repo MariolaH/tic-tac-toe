@@ -7,15 +7,18 @@
     font-family: monospace;
     font-size: 50px;
     text-align: center;
+    justify-content: center;
 }
 
 body {
     padding: 120px;
-    padding-right: 250px;
     font-family: monospace;
+    justify-content: center;
+    text-align: center;
 }
 
 .createBoardGameElement {
+    padding-top: 20px;
     height: 150px;
     width: 150px;
     display: grid;
@@ -23,6 +26,7 @@ body {
     grid-template-rows: 150px 150px 150px;
     justify-items: center;
     align-items: center;
+    padding-left: 370px;
 }
 
 .createTileElement {
@@ -32,6 +36,14 @@ body {
     font-size: 100 px;
     height: 100%;
     width: 100%;
+    border: 15px solid palevioletred;
+    box-shadow: 0 0 0 5px rgb(205, 59, 107);
+    border-radius: 15%;
+    cursor: url('/IMG/heart-fill.svg'), auto;
+    
+    
+    /* pointer pink; */
+
 
 }
 
