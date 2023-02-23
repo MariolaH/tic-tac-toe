@@ -14,7 +14,7 @@ createBoardGameElement.classList.add('createBoardGameElement');
 app.appendChild(createBoardGameElement);
 
 
-// create squares
+// create squares append tiles to createBoardGameElement
 
 
 let createTileElement = document.createElement ('div')
@@ -32,6 +32,7 @@ function clickTile(e) {
     } else {
         currentPlayer = "X";
     }
+    // disable tile once clicked on
     e.target.disabled = true;
 }
 
@@ -47,6 +48,20 @@ function buildBoard() {
 }
 
 buildBoard();
+
+reset 
+
+
+// function buildBoard() {
+//     for(let i = 0; i < 9; i++) {
+//         let tile = document.createElement("button");
+//         app.appendChild(tile);
+//         tile.className = "tile";
+//         tile.onclick = clickTile; 
+//     }
+// }
+
+// buildBoard();
 
 
 

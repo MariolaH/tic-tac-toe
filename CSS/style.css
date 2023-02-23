@@ -10,8 +10,8 @@
 }
 
 body {
-    padding: 250px;
-    padding-right: 150px;
+    padding: 120px;
+    padding-right: 250px;
     font-family: monospace;
 }
 
@@ -25,6 +25,19 @@ body {
     align-items: center;
 }
 
-.createTileElement
+.createTileElement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100 px;
+    height: 100%;
+    width: 100%;
+
+}
+
+.createTileElement:hover {
+    background-color: pink;
+}
+
 
 
