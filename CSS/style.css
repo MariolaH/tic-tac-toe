@@ -2,6 +2,14 @@
     box-sizing: border-box;
 }
 
+/* #app {
+align-self: center;
+align-items: center;
+align-content: center;
+justify-content: center;
+
+} */
+
 .header {
 
     font-family: monospace;
@@ -10,12 +18,13 @@
     justify-content: center;
 }
 
-.frame {
+/* .frame {
     justify-content: left;
-}
+} */
 
 body {
-    padding: 120px;
+    /* padding: 120px; */
+    padding-right: 120px;
     font-family: monospace;
     justify-content: center;
     text-align: center;
@@ -23,7 +32,7 @@ body {
 }
 
 .createBoardGameElement {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     height: 150px;
     width: 150px;
     display: grid;
@@ -31,7 +40,7 @@ body {
     grid-template-rows: 150px 150px 150px;
     justify-items: center;
     align-items: center;
-    padding-left: 370px;
+    padding-left: 430px;
 }
 
 .createTileElement {
@@ -48,17 +57,35 @@ body {
     
     
     /* pointer pink; */
+}
+
+.frame {
+    text-align: left;
+    font-size: 20px;
+    font-family: monospace;
+    color: rgb(205, 59, 107);
+}
 
 
+.turn {
+    text-align: left;
+    font-size: 20px;
+    font-family: monospace;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+button{
+    text-align: left;
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 75px;
 }
 
 .createTileElement:hover {
     background-color: pink;
 }
 
-.button {
-position:;
-}
 
 
 

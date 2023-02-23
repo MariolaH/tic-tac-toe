@@ -82,8 +82,6 @@ function clickTile(e) {
     } 
 }
 
-
-
 // created tiles on board
 
 function buildBoard() {
@@ -100,10 +98,10 @@ function buildBoard() {
 buildBoard();
 
 
-
+// reset button 
 let button = document.createElement('button')
 button.textContent = 'R E S E T'
-app.appendChild(button);
+frame.appendChild(button);
 button.onclick = resetPage;
 
 
@@ -215,7 +213,7 @@ function gameOver() {
     })
 }
 
-// reset button
+// reset function
 
 function resetPage() {
 
@@ -230,52 +228,3 @@ function resetPage() {
     buildBoard();
 
 }
-
-
-
-
-
-
-
-// create switch statement with all the possible outcomes or loop through winConditions
-
-
-// function to reset game
-
-// function reset() {
-
-//     if clickTile === winCondition
-//         then winner
-//         else clickTile != winCondition
-//         then draw
-// } 
-
-
-// need to connect clicktile to who's turn it is
-
-
-
-
-
-
-// Game state  varibles reuse throughout rest of function
-// use this to fill in squares on board when players is playing
-
-
-
-
-// array with each square on game board
-
-
-
-
-// variable that will keep track of current player
-
-
-
-
-// reference to gameBoard element
-
-
-
-
