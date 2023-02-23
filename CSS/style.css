@@ -10,11 +10,16 @@
     justify-content: center;
 }
 
+.frame {
+    justify-content: left;
+}
+
 body {
     padding: 120px;
     font-family: monospace;
     justify-content: center;
     text-align: center;
+    background-color: rgb(236, 189, 215);
 }
 
 .createBoardGameElement {
@@ -49,6 +54,10 @@ body {
 
 .createTileElement:hover {
     background-color: pink;
+}
+
+.button {
+position:;
 }
 
 
