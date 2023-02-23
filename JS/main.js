@@ -8,10 +8,12 @@ app.appendChild(frame);
 // frame.className = 'text-center'
 
 // game state 
-let players = ['X', 'O'];
+let players = ['x', 'o'];
 
 // references tiles on board
 let board = [];
+
+let gameOver = false;
 
 // Player 1
 let player1 = document.createElement('player1');
@@ -31,6 +33,7 @@ header.setAttribute('class', "header");
 header.textContent = 'TIC-TAC-TOE'
 app.appendChild(header);
 
+
 // create board 
 let createBoardGameElement = document.createElement('div')
 createBoardGameElement.classList.add('createBoardGameElement');
@@ -45,6 +48,12 @@ createTileElement.classList.add('createTileElement');
 // who the current player is = X
 let currentPlayer = players[0];
 
+// turn
+
+let turn = document.createElement("div");
+turn.textContent = `X's Turn`;
+turn.setAttribute('class', "turn");
+app.appendChild(turn);
 
 // switches between players
 
@@ -55,9 +64,10 @@ function clickTile(e) {
     } else {
         currentPlayer = players[0];
     }
+    turn.textContent = `${currentPlayer}'s Turn`;
     // disable tile once clicked on
     e.target.disabled = true;
-    console.log(board[0].innerText);
+    checkForWinner();
 
 }
 
@@ -84,14 +94,6 @@ let button = document.createElement('button')
 button.textContent = 'R E S E T'
 app.appendChild(button);
 
-// reset button
-
-// let resetPage() {
-// createBoardGameElement = buildBoard();
-//     createBoardGameElement();
-//     button();
-// }
-
 
 let winConditions = [
 		[0,1,2]
@@ -104,7 +106,8 @@ let winConditions = [
 		[2,4,6]
 ];
 
-console.log(board[0].innerText);
+// console.log(board[0].innerText);
+
 function checkForWinner() {
     let x = players[0];
     let o = players[1];
@@ -148,6 +151,7 @@ function checkForWinner() {
             board[4].innerText == x &&
             board[6].innerText == x:
             player1.textContent = "X wins!"
+            console.log('player 1 wins');
 
             break;
 
@@ -190,12 +194,22 @@ function checkForWinner() {
             board[6].innerText == o:
             player2.textContent = "O wins!"
             break;
+            console.log('player 2 wins');
 
 
     }
 }
 
-checkForWinner();
+
+
+// reset button
+
+// resetPage() {
+// 
+//     createBoardGameElement();
+//     button();
+// }
+
 
 
 
