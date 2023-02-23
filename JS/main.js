@@ -12,26 +12,30 @@ let players = ['x', 'o'];
 
 // references tiles on board
 let board = [];
-
-let gameOver = false;
+let rounds = 0;
 
 // Player 1
-let player1 = document.createElement('player1');
+let player1 = document.createElement('div');
 player1.setAttribute('class', "frame");
 player1.textContent = 'P L A Y E R: 1'
 frame.appendChild(player1);
 
 // Player 2
-let player2 = document.createElement('player2');
+let player2 = document.createElement('div');
 player2.setAttribute('class', "frame");
 player2.textContent = ('P L A Y E R: 2')
 frame.appendChild(player2);
 
+
+
 // Created title for the game 
-let header = document.createElement('TIC-TAC-TOE');
+let header = document.createElement('div');
 header.setAttribute('class', "header");
 header.textContent = 'TIC-TAC-TOE'
 app.appendChild(header);
+
+let tie = document.createElement('div');
+app.appendChild(tie);
 
 
 // create board 
@@ -67,8 +71,15 @@ function clickTile(e) {
     turn.textContent = `${currentPlayer}'s Turn`;
     // disable tile once clicked on
     e.target.disabled = true;
-    checkForWinner();
-
+    rounds ++;
+    if (rounds >= 5) {
+        checkForWinner();
+        
+    } 
+    if (rounds >= 9) {
+        tie.textContent = "it's a TIE!!!!"
+        
+    } 
 }
 
 
@@ -93,17 +104,18 @@ buildBoard();
 let button = document.createElement('button')
 button.textContent = 'R E S E T'
 app.appendChild(button);
+button.onclick = resetPage;
 
 
 let winConditions = [
-		[0,1,2]
-		[3,4,5]
-		[6,7,8]
-	    [0,3,6]
-		[1,4,7]
-		[2,5,8]
-		[0,4,8]
-		[2,4,6]
+		[0,1,2],
+		[3,4,5],
+		[6,7,8],
+	    [0,3,6],
+		[1,4,7],
+		[2,5,8],
+		[0,4,8],
+		[2,4,6],
 ];
 
 // console.log(board[0].innerText);
@@ -151,8 +163,7 @@ function checkForWinner() {
             board[4].innerText == x &&
             board[6].innerText == x:
             player1.textContent = "X wins!"
-            console.log('player 1 wins');
-
+            gameOver();
             break;
 
         case board[0].innerText == o &&
@@ -193,22 +204,32 @@ function checkForWinner() {
             board[4].innerText == o &&
             board[6].innerText == o:
             player2.textContent = "O wins!"
+            gameOver();
             break;
-            console.log('player 2 wins');
-
-
     }
 }
 
-
+function gameOver() {
+    board.forEach((item) =>{
+        item.disabled = true;
+    })
+}
 
 // reset button
 
-// resetPage() {
-// 
-//     createBoardGameElement();
-//     button();
-// }
+function resetPage() {
+
+    createBoardGameElement.innerText= (" ");
+    currentPlayer = players[0];
+    player1.textContent = ('P L A Y E R: 1');
+    player2.textContent = ('P L A Y E R: 2');
+    turn.textContent = `X's Turn`;
+    rounds = 0;
+    board= [];
+    tie.innerText= "";
+    buildBoard();
+
+}
 
 
 
