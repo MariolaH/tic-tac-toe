@@ -19,7 +19,7 @@ app.appendChild(createBoardGameElement);
 
 let createTileElement = document.createElement ('div')
 createTileElement.classList.add('createTileElement');
-app.appendChild(createTileElement);
+createBoardGameElement.appendChild(createTileElement);
 
 let currentPlayer = "X";
 
@@ -40,7 +40,7 @@ function clickTile(e) {
 function buildBoard() {
     for(let i = 0; i < 9; i++) {
         let createTileElement = document.createElement("button");
-        app.appendChild(createTileElement);
+        createBoardGameElement.appendChild(createTileElement);
         createTileElement.className = "createTileElement";
         createTileElement.onclick = clickTile; 
     }

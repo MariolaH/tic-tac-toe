@@ -1,6 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
 .header {
+
     font-family: monospace;
     font-size: 50px;
     text-align: center;
 }
+
+body {
+    padding: 250px;
+    padding-right: 150px;
+    font-family: monospace;
+}
+
+.createBoardGameElement {
+    height: 150px;
+    width: 150px;
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
+    justify-items: center;
+    align-items: center;
+}
+
+.createTileElement
+
 
