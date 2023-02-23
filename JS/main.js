@@ -1,6 +1,6 @@
 let app = document.getElementById('app');
 
-let frame = document.createElement('frame');
+let frame = document.createElement('div');
 frame.classList.add('frame');
 app.appendChild(frame);
 
@@ -93,61 +93,109 @@ app.appendChild(button);
 // }
 
 
-// let winConditions = [
-// 		[0,1,2]
-// 		[3,4,5]
-// 		[6,7,8]
-// 	    [0,3,6]
-// 		[1,4,7]
-// 		[2,5,8]
-// 		[0,4,8]
-// 		[2,4,6]
-// ];
+let winConditions = [
+		[0,1,2]
+		[3,4,5]
+		[6,7,8]
+	    [0,3,6]
+		[1,4,7]
+		[2,5,8]
+		[0,4,8]
+		[2,4,6]
+];
 
 console.log(board[0].innerText);
-function checkForWinner() => {
-    let player0 = players[0];
-    let player1 = player[1];
+function checkForWinner() {
+    let x = players[0];
+    let o = players[1];
 
     switch (true) {
-        case: board[0].innerText == player[0] && board[1].innerText == player[0] && board[2].innerText == player[0] &&
+        case board[0].innerText == x &&
+            board[1].innerText == x &&
+            board[2].innerText == x:
+
+        case board[3].innerText == x &&
+            board[4].innerText == x &&
+            board[5].innerText == x:
+
+
+        case board[6].innerText == x &&
+            board[7].innerText == x &&
+            board[8].innerText == x:
+
+
+        case board[0].innerText == x &&
+            board[3].innerText == x &&
+            board[6].innerText == x:
+
+
+        case board[1].innerText == x &&
+            board[4].innerText == x &&
+            board[7].innerText == x:
+
+
+        case board[2].innerText == x &&
+            board[5].innerText == x &&
+            board[8].innerText == x:
+
+
+        case board[0].innerText == x &&
+            board[4].innerText == x &&
+            board[8].innerText == x:
+
+
+        case board[2].innerText == x &&
+            board[4].innerText == x &&
+            board[6].innerText == x:
+            player1.textContent = "X wins!"
+
             break;
 
-            case board[3].innerText == player[0] &&
-            board[4].innerText == player[0] &&
-            board[5].innerText == player[0] &&
+        case board[0].innerText == o &&
+            board[1].innerText == o &&
+            board[2].innerText == o:
+
+        case board[3].innerText == o &&
+            board[4].innerText == o &&
+            board[5].innerText == o:
+
+
+        case board[6].innerText == o &&
+            board[7].innerText == o &&
+            board[8].innerText == o:
+
+
+        case board[0].innerText == o &&
+            board[3].innerText == o &&
+            board[6].innerText == o:
+
+
+        case board[1].innerText == o &&
+            board[4].innerText == o &&
+            board[7].innerText == o:
+
+
+        case board[2].innerText == o &&
+            board[5].innerText == o &&
+            board[8].innerText == o:
+
+
+        case board[0].innerText == o &&
+            board[4].innerText == o &&
+            board[8].innerText == o:
+
+
+        case board[2].innerText == o &&
+            board[4].innerText == o &&
+            board[6].innerText == o:
+            player2.textContent = "O wins!"
             break;
 
-            case board[6].innerText == player[0] &&
-            board[7].innerText == player[0] &&
-            board[8].innerText == player[0] &&
-            break;
 
-            case board[0].innerText == player[0] &&
-            board[3].innerText == player[0] &&
-            board[6].innerText == player[0] &&
-            break;
-
-            case board[1].innerText == player[0] &&
-            board[4].innerText == player[0] &&
-            board[7].innerText == player[0] &&
-            break;
-
-            case board[2].innerText == player[0] &&
-            board[5].innerText == player[0] &&
-            board[8].innerText == player[0] &&
-            break;
-
-             case board[0].innerText == player[0] &&
-            board[4].innerText == player[0] &&
-            board[8].innerText == player[0] &&
-            break;
-
-            case: board[2].innerText == player[0] &&
-            board[4].innerText == player[0] &&
-            board[6].innerText == player[0] &&
-            break;
     }
+}
+
+checkForWinner();
 
 
 
