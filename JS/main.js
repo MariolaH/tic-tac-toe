@@ -17,9 +17,38 @@ app.appendChild(createBoardGameElement);
 // create squares
 
 
-let createTileSquaresElement = document.createElement ('div')
-createTileSquaresElement.classList.add('createTileSquaresElement');
-app.appendChild(createTileSquaresElement);
+let createTileElement = document.createElement ('div')
+createTileElement.classList.add('createTileElement');
+app.appendChild(createTileElement);
+
+let currentPlayer = "X";
+
+// switches between players
+
+function clickTile(e) {
+    e.target.innerText = currentPlayer;
+    if(currentPlayer == 'X') {
+        currentPlayer = "O"
+    } else {
+        currentPlayer = "X";
+    }
+    e.target.disabled = true;
+}
+
+// created tiles on board
+
+function buildBoard() {
+    for(let i = 0; i < 9; i++) {
+        let createTileElement = document.createElement("button");
+        app.appendChild(createTileElement);
+        createTileElement.className = "createTileElement";
+        createTileElement.onclick = clickTile; 
+    }
+}
+
+buildBoard();
+
+
 
 
 // Game state  varibles reuse throughout rest of function
