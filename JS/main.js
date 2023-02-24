@@ -1,5 +1,6 @@
 let app = document.getElementById('app');
 
+// created element frame - players 1 & 2 and reset button is in frame
 let frame = document.createElement('div');
 frame.classList.add('frame');
 app.appendChild(frame);
@@ -26,14 +27,14 @@ player2.setAttribute('class', "frame");
 player2.textContent = ('P L A Y E R: 2')
 frame.appendChild(player2);
 
-
-
-// Created title for the game 
+// created header element and added title
 let header = document.createElement('div');
 header.setAttribute('class', "header");
 header.textContent = 'TIC-TAC-TOE'
 app.appendChild(header);
 
+
+// tie notification on board 
 let tie = document.createElement('div');
 tie.setAttribute('class', "tie");
 app.appendChild(tie);
@@ -53,8 +54,7 @@ createTileElement.classList.add('createTileElement');
 // who the current player is = X
 let currentPlayer = players[0];
 
-// turn
-
+// created turn notification
 let turn = document.createElement("div");
 turn.textContent = `X's  Turn`;
 turn.setAttribute('class', "turn");
@@ -72,19 +72,20 @@ function clickTile(e) {
     turn.textContent = `${currentPlayer}'s Turn`;
     // disable tile once clicked on
     e.target.disabled = true;
-    rounds ++;
+    rounds++;
+    // this checks for winner after 5 squares have been clicked
     if (rounds >= 5) {
         checkForWinner();
-        
-    } 
+
+    }
+    // after all squres have been click tie notification pops up
     if (rounds >= 9) {
         tie.textContent = "IT'S A TIE!!!!"
-        
-    } 
+
+    }
 }
 
 // created tiles on board
-
 function buildBoard() {
     for (let i = 0; i < 9; i++) {
         let createTileElement = document.createElement("button");
@@ -107,18 +108,19 @@ button.onclick = resetPage;
 
 
 let winConditions = [
-		[0,1,2],
-		[3,4,5],
-		[6,7,8],
-	    [0,3,6],
-		[1,4,7],
-		[2,5,8],
-		[0,4,8],
-		[2,4,6],
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
 ];
 
 // console.log(board[0].innerText);
 
+// this functions loops through all possible win senerios
 function checkForWinner() {
     let x = players[0];
     let o = players[1];
@@ -208,8 +210,9 @@ function checkForWinner() {
     }
 }
 
+// gameover fuction - once game is over disable all squares
 function gameOver() {
-    board.forEach((item) =>{
+    board.forEach((item) => {
         item.disabled = true;
     })
 }
@@ -218,14 +221,14 @@ function gameOver() {
 
 function resetPage() {
 
-    createBoardGameElement.innerText= (" ");
+    createBoardGameElement.innerText = (" ");
     currentPlayer = players[0];
     player1.textContent = ('P L A Y E R: 1');
     player2.textContent = ('P L A Y E R: 2');
     turn.textContent = `X's Turn`;
     rounds = 0;
-    board= [];
-    tie.innerText= "";
+    board = [];
+    tie.innerText = "";
     buildBoard();
 
 }
