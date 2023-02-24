@@ -39,7 +39,9 @@ body {
     font-family: monospace;
     justify-content: center; */
     /* text-align: center; */
-    background-color: rgb(236, 189, 215);
+    /* background-color: rgb(236, 189, 215); */
+    background-image: linear-gradient(to bottom right, rgb(228, 128, 173), rgb(207, 139, 182), rgb(225, 66, 132));
+    min-height: 100vh;
 }
 
 .createBoardGameElement {
