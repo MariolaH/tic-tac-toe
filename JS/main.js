@@ -58,6 +58,7 @@ let currentPlayer = players[0];
 let turn = document.createElement("div");
 turn.textContent = `X's  Turn`;
 turn.setAttribute('class', "turn");
+// adding it to html doc
 app.appendChild(turn);
 
 // switches between players
@@ -69,6 +70,7 @@ function clickTile(e) {
     } else {
         currentPlayer = players[0];
     }
+    // this switchs whos turn it is then displays it up in create turn Notification
     turn.textContent = `${currentPlayer}'s Turn`;
     // disable tile once clicked on
     e.target.disabled = true;
@@ -76,19 +78,20 @@ function clickTile(e) {
     // this checks for winner after 5 squares have been clicked
     if (rounds >= 5) {
         checkForWinner();
-
     }
     // after all squres have been click tie notification pops up
     if (rounds >= 9) {
         tie.textContent = "IT'S A TIE!!!!"
-
     }
 }
 
 // created tiles on board
 function buildBoard() {
+    // adds tiles to board - i++ increments 
     for (let i = 0; i < 9; i++) {
+        // make each tile a button
         let createTileElement = document.createElement("button");
+        // append createTileElement(which is button) to the board itself
         createBoardGameElement.appendChild(createTileElement);
         createTileElement.className = "createTileElement";
         // square that is click can no longer be clicked again
@@ -100,10 +103,14 @@ function buildBoard() {
 buildBoard();
 
 
-// reset button 
+// reset button
+// creates a button reset in html 
 let button = document.createElement('button')
+// text that will be display on game
 button.textContent = 'R E S E T'
+// appending it to the game
 frame.appendChild(button);
+// when click on button will reset the board
 button.onclick = resetPage;
 
 
@@ -212,6 +219,7 @@ function checkForWinner() {
 
 // gameover fuction - once game is over disable all squares
 function gameOver() {
+    // board [] refers to each tile on board, disable each array item in board meaning each tile... once all disbles the game is over 
     board.forEach((item) => {
         item.disabled = true;
     })
