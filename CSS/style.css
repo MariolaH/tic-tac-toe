@@ -77,7 +77,13 @@ body {
     font-size: 30px;
     font-family: monospace;
     color: rgb(205, 59, 107);
-    padding-left: 40px;
+    /* padding-left: 40px; */
+    /* padding-bottom: 10px; */
+    /* position: absolute;*/
+bottom: 10%;
+  position: fixed;
+  left: 2%;
+
 }
 
 

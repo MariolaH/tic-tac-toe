@@ -9,7 +9,7 @@ app.appendChild(frame);
 // frame.className = 'text-center'
 
 // game state 
-let players = ['x', 'o'];
+let players = ['X', 'O'];
 
 // references tiles on board
 let board = [];
@@ -17,13 +17,13 @@ let rounds = 0;
 
 // Player 1
 let player1 = document.createElement('div');
-player1.setAttribute('class', "frame");
+// player1.setAttribute('class', "frame");
 player1.textContent = 'P L A Y E R: 1'
 frame.appendChild(player1);
 
 // Player 2
 let player2 = document.createElement('div');
-player2.setAttribute('class', "frame");
+// player2.setAttribute('class', "frame");
 player2.textContent = ('P L A Y E R: 2')
 frame.appendChild(player2);
 
