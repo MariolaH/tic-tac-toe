@@ -35,6 +35,7 @@ header.textContent = 'TIC-TAC-TOE'
 app.appendChild(header);
 
 let tie = document.createElement('div');
+tie.setAttribute('class', "tie");
 app.appendChild(tie);
 
 
@@ -55,7 +56,7 @@ let currentPlayer = players[0];
 // turn
 
 let turn = document.createElement("div");
-turn.textContent = `X's Turn`;
+turn.textContent = `X's  Turn`;
 turn.setAttribute('class', "turn");
 app.appendChild(turn);
 
@@ -77,7 +78,7 @@ function clickTile(e) {
         
     } 
     if (rounds >= 9) {
-        tie.textContent = "it's a TIE!!!!"
+        tie.textContent = "IT'S A TIE!!!!"
         
     } 
 }

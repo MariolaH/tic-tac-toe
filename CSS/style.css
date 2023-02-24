@@ -1,14 +1,7 @@
-* {
+/* * {
     box-sizing: border-box;
-}
-
-/* #app {
-align-self: center;
-align-items: center;
-align-content: center;
-justify-content: center;
-
 } */
+
 
 .header {
 
@@ -16,31 +9,50 @@ justify-content: center;
     font-size: 50px;
     text-align: center;
     justify-content: center;
+    text-shadow:
+       3px 3px 0 #ae0b75,
+     -1px -1px 0 #ae0b75,  
+      1px -1px 0 #ae0b75,
+      -1px 1px 0 #ae0b75,
+       1px 1px 0 #ae0b75;
+
 }
 
-/* .frame {
-    justify-content: left;
-} */
+.app {
+    align-items: center;
+    
+}
 
-body {
-    /* padding: 120px; */
-    padding-right: 120px;
-    font-family: monospace;
+.tie {
+    align-items: center;
     justify-content: center;
     text-align: center;
+    padding-top: 20px;
+    font-family: monospace;
+    font-size: 45px;
+    font-weight: bolder;
+}
+
+
+body {
+    /* padding-right: 120px;
+    font-family: monospace;
+    justify-content: center; */
+    /* text-align: center; */
     background-color: rgb(236, 189, 215);
 }
 
 .createBoardGameElement {
-    /* padding-top: 20px; */
     height: 150px;
     width: 150px;
     display: grid;
     grid-template-columns: 150px 150px 150px;
     grid-template-rows: 150px 150px 150px;
-    justify-items: center;
-    align-items: center;
-    padding-left: 430px;
+    /* justify-items: center;
+    align-items: center; */
+    /* justify-content: center; */
+    padding-left: 470px;
+    /* padding-top: 10px; */
 }
 
 .createTileElement {
@@ -56,29 +68,42 @@ body {
     cursor: url('/IMG/heart-fill.svg'), auto;
     
     
-    /* pointer pink; */
 }
 
 .frame {
-    text-align: left;
-    font-size: 20px;
+    /* text-align: left; */
+    font-size: 30px;
     font-family: monospace;
     color: rgb(205, 59, 107);
+    padding-left: 40px;
 }
 
+
+/* what players turn it is */
+
 .turn {
-    text-align: left;
-    font-size: 20px;
+    /* text-align: left; */
+    font-size: 30px;
     font-family: monospace;
-    /* display: flex;
-    flex-direction: column; */
+    padding-left: 320px;
+    padding-top: 50px;
+    font-weight: bolder;
+    border: #ae0b75;
 }
 
 button{
-    text-align: left;
-    margin-top: 30px;
+    
+text-align: left;
+    /* margin-top: 10px; */
     margin-left: 20px;
-    width: 75px;
+    width: 135px;
+    box-shadow: 3px 4px 0px 0px rgb(205, 59, 107);
+    border-radius:15px;
+    border:1px solid #d4559f;
+    cursor:pointer;
+    font-size:17px;
+	padding:7px 25px;
+    
 }
 
 .createTileElement:hover {
